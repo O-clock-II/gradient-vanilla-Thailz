@@ -1,5 +1,6 @@
 import {
   RAND_FIRST, RAND_LAST, TO_LEFT, TO_RIGHT,
+  TO_45DEG, TO_135DEG, TO_225DEG, TO_315DEG,
 } from './actions';
 
 const initialState = {
@@ -38,6 +39,26 @@ export default (state = initialState, action = {}) => {
         ...state,
         lastColor: action.color,
         nbColors: state.nbColors + 1,
+      };
+    case TO_45DEG:
+      return {
+        ...state,
+        direction: '45deg',
+      };
+    case TO_135DEG:
+      return {
+        ...state,
+        direction: '135deg',
+      };
+    case TO_225DEG:
+      return {
+        ...state,
+        direction: '225deg',
+      };
+    case TO_315DEG:
+      return {
+        ...state,
+        direction: '315deg',
       };
 
     default:

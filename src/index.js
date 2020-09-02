@@ -2,7 +2,7 @@
 import store from './store';
 import { randomHexColor, generateSpanColor } from './utils';
 import {
-  randFirst, randLast, toLeft, toRight,
+  randFirst, randLast, toLeft, toRight, to45, to135, to225, to315,
 } from './store/actions';
 // == State
 // Executer store.getState() va
@@ -29,11 +29,33 @@ function renderColors() {
   const firstSpan = generateSpanColor(firstColor);
   const lastSpan = generateSpanColor(lastColor);
 
-  const result = direction === '90deg'
-    ? `${firstSpan} → ${lastSpan}`
-    : `${lastSpan} ← ${firstSpan}`;
+  
 
-  document.getElementById('colors').innerHTML = result;
+  if (direction === '90deg') {
+    const result = `${firstSpan} → ${lastSpan}`;
+    document.getElementById('colors').innerHTML = result;
+  }
+  else if (direction === '45deg') {
+    const result = `${firstSpan} \u2197 ${lastSpan}`;
+    document.getElementById('colors').innerHTML = result;
+  }
+  else if (direction === '135deg') {
+    const result = `${firstSpan} \u2198 ${lastSpan}`;
+    document.getElementById('colors').innerHTML = result;
+  }
+  else if (direction === '270deg') {
+    const result = `${firstSpan} \u2199 ${lastSpan}`;
+    document.getElementById('colors').innerHTML = result;
+  }
+  else if (direction === '225deg') {
+    const result = `${firstSpan} \u2196 ${lastSpan}`;
+    document.getElementById('colors').innerHTML = result;
+  }
+  else if (direction === '315deg') {
+    const result = `${firstSpan} → ${lastSpan}`;
+    document.getElementById('colors').innerHTML = result;
+  }
+
 }
 
 // == Initialisation
@@ -106,3 +128,35 @@ document.getElementById('toRight')
     // state.direction = '90deg';
     store.dispatch(toRight());
   });
+//= ===========================================
+//= ===========================================
+//= ===========================================
+
+document.getElementById('to45')
+  .addEventListener('click', () => {
+    // state.direction = '90deg';
+    store.dispatch(to45());
+  });
+
+document.getElementById('to135')
+  .addEventListener('click', () => {
+    // state.direction = '90deg';
+    store.dispatch(to135());
+  });
+
+document.getElementById('to225')
+  .addEventListener('click', () => {
+    // state.direction = '90deg';
+    store.dispatch(to225());
+  });
+
+document.getElementById('to315')
+  .addEventListener('click', () => {
+    // state.direction = '90deg';
+    store.dispatch(to315());
+  });
+
+//= ===========================================
+//= ===========================================
+//= ===========================================
+

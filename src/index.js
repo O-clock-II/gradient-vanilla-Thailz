@@ -29,33 +29,36 @@ function renderColors() {
   const firstSpan = generateSpanColor(firstColor);
   const lastSpan = generateSpanColor(lastColor);
 
-  
+  //   if (direction === '90deg') {
+  //     const result = `${firstSpan} → ${lastSpan}`;
+  //     document.getElementById('colors').innerHTML = result;
+  //   }
+  //   else if (direction === '45deg') {
+  //     const result = `${firstSpan} \u2197 ${lastSpan}`;
+  //     document.getElementById('colors').innerHTML = result;
+  //   }
+  //   else if (direction === '135deg') {
+  //     const result = `${firstSpan} \u2198 ${lastSpan}`;
+  //     document.getElementById('colors').innerHTML = result;
+  //   }
+  //   else if (direction === '270deg') {
+  //     const result = `${firstSpan} \u2199 ${lastSpan}`;
+  //     document.getElementById('colors').innerHTML = result;
+  //   }
+  //   else if (direction === '225deg') {
+  //     const result = `${firstSpan} \u2196 ${lastSpan}`;
+  //     document.getElementById('colors').innerHTML = result;
+  //   }
+  //   else if (direction === '315deg') {
+  //     const result = `${firstSpan} → ${lastSpan}`;
+  //   }
 
-  if (direction === '90deg') {
-    const result = `${firstSpan} → ${lastSpan}`;
-    document.getElementById('colors').innerHTML = result;
-  }
-  else if (direction === '45deg') {
-    const result = `${firstSpan} \u2197 ${lastSpan}`;
-    document.getElementById('colors').innerHTML = result;
-  }
-  else if (direction === '135deg') {
-    const result = `${firstSpan} \u2198 ${lastSpan}`;
-    document.getElementById('colors').innerHTML = result;
-  }
-  else if (direction === '270deg') {
-    const result = `${firstSpan} \u2199 ${lastSpan}`;
-    document.getElementById('colors').innerHTML = result;
-  }
-  else if (direction === '225deg') {
-    const result = `${firstSpan} \u2196 ${lastSpan}`;
-    document.getElementById('colors').innerHTML = result;
-  }
-  else if (direction === '315deg') {
-    const result = `${firstSpan} → ${lastSpan}`;
-    document.getElementById('colors').innerHTML = result;
-  }
-
+  const result = direction  === '90deg'  ? `${firstSpan} →      ${lastSpan}`
+              :  direction  === '45deg'  ? `${firstSpan} \u2197 ${lastSpan}`
+              :  direction  === '135deg' ? `${firstSpan} \u2198 ${lastSpan}`
+              :  direction  === '225deg' ? `${firstSpan} \u2199 ${lastSpan}`
+              :  direction  === '315deg' ? `${firstSpan} \u2196 ${lastSpan}` : `${firstSpan} → ${lastSpan}`;
+  document.getElementById('colors').innerHTML = result;
 }
 
 // == Initialisation
@@ -159,4 +162,3 @@ document.getElementById('to315')
 //= ===========================================
 //= ===========================================
 //= ===========================================
-
